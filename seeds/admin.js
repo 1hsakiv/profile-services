@@ -1,4 +1,4 @@
-const mongoose = require('mongoose')
+const mongoose = require('mongoose');
 const logger = require('../config/logger');
 const Admin = require('../models/admin')
 const dbUrl = process.env.DB_URL || 'mongodb://localhost:27017/profileService';
@@ -11,41 +11,37 @@ mongoose.connect(dbUrl, {
     })
       .then(() => {
             logger.log('info', 'DB connection opened (admin.js SEEDS FILE)');
-    })
+      })
       .catch(err => {
-            logger.log('Something went wrong');
-            logger.log(err);
+            console.log('Something went wrong');
+            console.log(err);
             logger.log('info', `DB connection failed (admin.js SEEDS FILE):: ${err}`);
-      });        
+      });
 
 adminList = [
       {
-            name: 'Admin1',
+            name: 'Admin 1',
             gender: 'male',
-            mobNumber: '8828328328',
             email: 'admin1@gmail.com',
-            dob: '2000/03/23'
+            dob: '1999/03/23'
       },
       {
-            name: 'Admin2',
-            gender: 'female',
-            mobNumber: '9998989900',
-            email: 'admin2@gmail.com',
-            dob: '2002/07/13'
-      },
-      {
-            name: 'Admin3',
+            name: 'Admin 2',
             gender: 'male',
-            mobNumber: '18212932893838',
-            email: 'admin3@gmail.com',
-            dob: '2001/02/20'
+            email: 'admin2@gmail.com',
+            dob: '1999/07/13'
       },
       {
-            name: 'Admin4',
-            gender: 'female',
-            mobNumber: '27677632873287',
+            name: 'Admin 3',
+            gender: 'male',
+            email: 'admin3@gmail.com',
+            dob: '2000/02/20'
+      },
+      {
+            name: 'Admin 4',
+            gender: 'male',
             email: 'admin4@walmart.com',
-            dob: '1991/01/01'
+            dob: '1997/01/01'
       }
 ]
 
@@ -56,7 +52,7 @@ const insertAdminList = () => {
             })
             .catch(err => {
                   logger.log('info', `error while adding admins:: ${err}`);
-                  logger.log(err);
+                  console.log(err);
             })
 }
 
