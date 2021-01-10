@@ -55,7 +55,7 @@ const insertStudentList = () => {
                   logger.log('info', `students added ${s}`);
             })
             .catch(err => {
-                  logger.log('info', `error while adding teachers:: ${err}`);
+                  logger.log('info', `error while adding students:: ${err}`);
                   console.log(err);
             })
 }

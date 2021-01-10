@@ -23,24 +23,28 @@ mongoose.connect(dbUrl, {
       useUnifiedTopology: true,
       useFindAndModify: false
 })
-.then(() => {
-            logger.log('info', 'DB CONNECTION OPENED')
+      .then(() => {
+            logger.log('info', 'DB CONNECTION OPENED');
       })
       .catch(err => {
             logger.log(`Error while openig DB connection:: ${err}`);
 
       });
-      
+
 //ROUTE IMPORTS
-const studentRoutes = require('./routes/student')
+const adminRoutes = require('./routes/admin');
+const schoolRoutes = require('./routes/school');
+const studentRoutes = require('./routes/student');
 const teacherRoutes = require('./routes/teacher');
-      
+
 // MIDDLEWARES
 app.use(express.json());
 
 //GENERALISED ROUTES
 app.use('/student', studentRoutes);
 app.use('/teacher', teacherRoutes);
+app.use('/admin', adminRoutes);
+app.use('/school', schoolRoutes);
 
 
 app.use((req, res) => {
