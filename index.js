@@ -34,6 +34,7 @@ mongoose.connect(dbUrl, {
 //ROUTE IMPORTS
 const studentRoutes = require('./routes/student')
 const teacherRoutes = require('./routes/teacher');
+const adminRoutes = require('./routes/admin');
       
 // MIDDLEWARES
 app.use(express.json());
@@ -41,6 +42,7 @@ app.use(express.json());
 //GENERALISED ROUTES
 app.use('/student', studentRoutes);
 app.use('/teacher', teacherRoutes);
+app.use('/admin', adminRoutes);
 
 
 app.use((req, res) => {
