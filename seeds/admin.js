@@ -8,7 +8,7 @@ mongoose.connect(dbUrl, {
       useCreateIndex: true,
       useUnifiedTopology: true,
       useFindAndModify: false
-})
+    })
       .then(() => {
             logger.log('info', 'DB connection opened (admin.js SEEDS FILE)');
       })
